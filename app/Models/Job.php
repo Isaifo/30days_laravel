@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class job extends Model {
+class Job extends Model {
 
     use HasFactory;
 
@@ -15,5 +15,10 @@ class job extends Model {
         'title',
         'salary',
     ];
+
+    // job that have information about the employer
+    public function employer() {
+        return $this->belongsTo(Employer::class);
+    }
 
 }
